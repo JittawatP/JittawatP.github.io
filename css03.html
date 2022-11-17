@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            
+        }
+        .box{
+            background-color: darkred;
+            width: 200px;
+            height: 200px;
+            /* relvative จะเอ้างอิงจากตำแหน่งเดิมของมัน */
+            position: relative ;
+            top: 1cm;
+        }
+        .box2_mom{
+            height: 200px;
+            width: 600px;
+            background-color: deeppink;
+            position: fixed ;
+            top: 100px;
+            left: 200px;
+            overflow: hidden;
+        }
+        .box2{
+            background-color: goldenrod;
+            width: 200px;
+            height: 200px;
+            /* absolute จะเอ้างอิงจากแม่ของมัน */
+            position: absolute ;
+            top: 10px;
+            left: 20px;
+        }
+        .box3{
+            background-color: darkmagenta;
+            width: 200px;
+            height: 200px;
+            /* fix จะเอ้างอิงจากตำแหน่งจากหน้าจอ */
+            position: fixed ;
+            top: 10px;
+            left: 600px;
+        }
+       
+    </style>
+</head>
+<body>
+    <p>Hello Good morning</p>
+    <div class="box"></div>
+    <div class="box2_mom">
+        <div class="box2"></div>
+    </div>
+    
+    <div class="box3"></div>
+</body>
+</html>

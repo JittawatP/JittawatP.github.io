@@ -8,35 +8,48 @@
     <style>
         div{
             min-height: 100px;
-            background-color: rgba(0, 255, 70, 0.4);
+            background-color: rgba(98, 250, 138, 0.89);
             margin-top: 20px;
         }
-        .header{
+        /* เครื่องหมายมากกว่าคือ h1 ที่เป็นลูกของ class header เท่านั้น */
+        .header>h1{
             background-color: crimson;
         }
-        #web_head{
-            color: white;
+        /* h1 ที่อยุ่ใน div และ div อยู่ใน class header อีกที */
+        .header>div>h1 {
+            color: violet;
         }
+        /* #อ้างถึง ID */
+        /* #web_head{
+            color: white;
+        } */
+        /*  .เป็นการอ้างถึง class      h1 ทั้งหมดใน class main_content */
         .main_content h1{
             text-decoration-style: dashed ;
             text-decoration-line: line-through;
         }
-        div p{
-
+        /* h1 ทั้งหมดใน div */
+        div h1{
+            color: red;
+        } 
+        /* +p บรรทัดถัดไปแสดงผล 1 บรรทัด  ~p ทุกบรรทัดถัดจาก first_p */
+        .first_p~p{
+            background-color: darkgray;
         }
         </style>
 </head>
 <body>
-    <div class="header">
-        <h1 id="web_head">สวัสดีครับ</h1>
+    <div class="header" style="background-color: darkblue;">
+        
             <div>
-                <h1 id="web_head">สวัสดีครับ</h1>
+                <h1 id="web_head">สวัสดีครับ สีม่วง</h1>
             </div>
+            <h1 id="web_head">สวัสดีครับ</h1>
 
     </div>
     <div class="main_content">
-        <p class="first_p">เพิ่มย่อหน้า/ลบย่อหน้า</p>
         <p>ใส่คอมเม้นท์บรรทัดเดียว</p>
+        <p class="first_p">เพิ่มย่อหน้า/ลบย่อหน้า</p>
         <p>ลบทั้งบรรทัด</p>
         <p>เพิ่มบรรทัดข้างล่าง</p>
         <p>เลื่อนทั้งบรรทัดขึ้นบนหรือลงล่าง</p>

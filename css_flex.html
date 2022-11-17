@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Flex</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        /* ดอกจันทร์คือทุกๆ element ในหน้าเว็บ */
+        * {
+            box-sizing: border-box;
+        }
+        .menu{
+            background-color: darkcyan;
+            overflow: hidden;
+            position: sticky;
+            top: 0px;
+            left: 0px;
+           
+        }
+
+        .menu>ul{
+            list-style: none;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        .menu>ul>li{          
+            float: left;
+        }
+
+        .menu>ul>li :hover{          
+            background-color: darkgreen;
+        }
+
+        .menu>ul>li>a{
+           
+            display: block;
+            padding: 10px;
+            color: mintcream;
+            text-decoration: none;
+
+        }
+
+        .menu>ul>li.menu_right{
+            float: right;
+            margin-right: 40px;
+        }
+
+
+        .header{
+            background-color:lightgreen;           
+            border: 1px solid lightgreen;
+        }
+       
+        .content_mother{
+            background-color: lightgreen;
+            display: flex;
+        }
+
+        .content{
+            flex: 1;
+            font-size: 40pt;
+            text-align: center;
+            color: aliceblue;
+            
+        }
+
+        .content1{
+            background-color: rgb(139, 37, 255);
+            height: 600px;
+        }
+        .content2{
+            background-color: rgb(38, 35, 252);
+            height: 600px;
+        }
+        .content3{
+            background-color: rgb(0, 217, 255);
+            height: 600px;
+        }
+        .lower_content{
+            background-color: tan;
+            height: 900px;
+        }
+        .lower_content2{
+            background-color: orange;
+            height: 900px;
+        }
+        .maps{
+            background-color: khaki;
+            height: 600px;
+        }
+        .footer{
+            background-color: royalblue;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#">หน้าแรก</a></li>
+            <li><a href="#">บ้านเดี่ยว</a></li>
+            <li><a href="#">คอนโด</a></li>
+            <li><a href="#">คนขายบ้าน</a></li>
+            <li class="menu_right"><a href="#">login</a></li>
+        </ul>
+    </div>
+    <div class="header">
+        <h1>Bank Real Estate </h1>
+    </div>
+    <div class="content_mother">
+        <div class="content content1">1</div>
+        <div class="content content2">2</div>
+        <div class="content content3">3</div>
+    </div>
+    <div class="lower_content"></div> 
+    <div class="lower_content2"></div>
+    <div class="maps"></div>
+    <div class="footer"></div>   
+</body>
+</html>
