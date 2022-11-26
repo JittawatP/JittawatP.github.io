@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>Study Flex</title>
     <style>
         body{
@@ -15,13 +16,16 @@
             box-sizing: border-box;
         }
         .menu{
-            background-color: darkcyan;
+            background-color: black;
             overflow: hidden;
             position: sticky;
             top: 0px;
             left: 0px;
            
         }
+
+
+
 
         .menu>ul{
             list-style: none;
@@ -60,35 +64,113 @@
         .content_mother{
             background-color: lightgreen;
             display: flex;
+            flex-wrap: wrap;
+            
         }
 
+        .hamburger_menu{
+            display: none;
+        }
+        .vertical_menu{
+            display: none;
+            
+        }
+
+        @media screen and (max-width:500px){
+            .content_mother{
+                flex-direction: column;
+            }
+            .hamburger_menu{
+                font-size: 30px;
+                color: white;
+                text-decoration: none;
+                display: block;
+                padding-left: 20px;
+                padding-top: 5px;
+            }
+            .horizontal_menu{
+                display: none;
+            }
+            .menu>ul>li{
+                float: none;
+                
+            }
+            .vertical_menu{
+                position: fixed;
+                background-color: rgba(0, 0, 0, 0.8);
+                width: 100%;
+                padding: 10px;
+            }
+            .vertical_menu>li>a{
+                text-align: center;
+
+            }
+
+           
+        }
         .content{
             flex: 1;
             font-size: 40pt;
             text-align: center;
             color: aliceblue;
-            
+            margin: 15px;
+            flex-basis: 300px;
         }
 
         .content1{
             background-color: rgb(139, 37, 255);
-            height: 600px;
+            height: 300px;
+            flex: 1;
         }
         .content2{
             background-color: rgb(38, 35, 252);
-            height: 600px;
+            height: 300px;
+            flex: 1;
         }
         .content3{
             background-color: rgb(0, 217, 255);
-            height: 600px;
+            height: 300px;
+            flex: 1;
         }
         .lower_content{
             background-color: tan;
-            height: 900px;
+            display: flex;
+            flex-wrap: wrap;
+    
+            height: 600px;
+
+            flex: 1;
+      
+            
+        }
+
+        .item{
+            margin: 10px;
+            width: 150px;
+            height: 150px;
+            background-color: tomato;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            font-size: 50px;
+            flex-wrap: wrap;
+           
+            flex-direction: center;
+            
         }
         .lower_content2{
             background-color: orange;
-            height: 900px;
+            height: 200px;
+            display: flex;
+        }
+        .item2{
+            flex: 1;
+            background-color: pink;
+            color: white;
+            text-align: center;
+            margin: 10px;
+            font-size: 50px;
+            flex-wrap: wrap;
         }
         .maps{
             background-color: khaki;
@@ -102,12 +184,20 @@
 </head>
 <body>
     <div class="menu">
-        <ul>
+        <ul class="horizontal_menu">
             <li><a href="#">หน้าแรก</a></li>
             <li><a href="#">บ้านเดี่ยว</a></li>
             <li><a href="#">คอนโด</a></li>
             <li><a href="#">คนขายบ้าน</a></li>
             <li class="menu_right"><a href="#">login</a></li>
+        </ul>
+        <a href="#" onclick="openMenu()" class="hamburger_menu"><i class="fa-sharp fa-solid fa-bars"></i></a>
+        <ul class="vertical_menu">
+            <li><a href="#">หน้าแรก</a></li>
+            <li><a href="#">บ้านเดี่ยว</a></li>
+            <li><a href="#">คอนโด</a></li>
+            <li><a href="#">คนขายบ้าน</a></li>
+            <li><a href="#">login</a></li>
         </ul>
     </div>
     <div class="header">
@@ -118,9 +208,56 @@
         <div class="content content2">2</div>
         <div class="content content3">3</div>
     </div>
-    <div class="lower_content"></div> 
-    <div class="lower_content2"></div>
-    <div class="maps"></div>
+    <div class="lower_content">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+
+
+
+    </div> 
+    <div class="lower_content2">
+        <div class="item2">11</div>
+        <div class="item2">12</div>
+    </div>
+    <div class="maps">
+
+
+
+        
+    </div>
     <div class="footer"></div>   
+
+    <script >
+        function openMenu(){
+            
+            let menu = document.getElementsByClassName("vertical_menu")[0];
+            if(menu.style.display == "block")
+                menu.style.display = "none";
+            else
+                menu.style.display = "block";
+        }
+
+
+        function openResizeMenu(){
+            
+            let menu = document.getElementsByClassName("vertical_menu")[0];
+            menu.style.display ="none";
+        }
+
+        window.onresize = openResizeMenu;
+    </script>
 </body>
 </html>
